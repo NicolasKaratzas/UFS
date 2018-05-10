@@ -1,26 +1,26 @@
 <html>
 <head>
-    <title>University Feedback System</title> 
-  
+    <title>University Feedback System</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-  
+
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyAmqGKViwMw9mfBrVzLFWBqF55jBncYS8g"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="maplace.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> //fonts
+    <script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyAmqGKViwMw9mfBrVzLFWBqF55jBncYS8g"></script>//script of map plug in
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>//in order to work i needed to add jquery script plug in. Its a javascript library
+    <script src="maplace.min.js"></script>//This is the library file.
     <script type="text/javascript">
-        $(function(){
+        $(function(){//
         var LocsA = [
         {
-            lat: 59.438742,
-            lon: 24.771645000000035,
+            lat: 59.438742,//lattitude
+            lon: 24.771645000000035,//longitude
             title: 'Tallinn University',
             html: 'Tallinn University, Narva mnt, Tallinn, Estonia',
-            zoom: 16,
-            icon: 'https://maps.google.com/mapfiles/markerA.png',
-            animation: google.maps.Animation.DROP
+            zoom: 16,//how much zoom when loads.
+            icon: 'https://maps.google.com/mapfiles/markerA.png',//icons i can put whatever icon
+            animation: google.maps.Animation.DROP //animation drop
         },
         {
             lat: 59.395884,
@@ -64,7 +64,7 @@
             title: 'University of Helsinki',
             html: 'University of Helsinki, Universitetsgatan, Helsinki, Finland',
             zoom: 16,
-            icon: 'https://maps.google.com/mapfiles/markerD.png',
+            icon: 'https://maps.google.com/mapfiles/markerF.png',
           animation:google.maps.Animation.DROP
         },
         {
@@ -73,7 +73,7 @@
             title: 'Berlin Institute of Technology',
             html: 'Freie Universität Berlin, Kaiserswerther Straße, Berlin, Germany',
             zoom: 16,
-            icon: 'https://maps.google.com/mapfiles/markerD.png',
+            icon: 'https://maps.google.com/mapfiles/markerG.png',
           animation:google.maps.Animation.DROP
         },
         {
@@ -82,7 +82,7 @@
             title: 'University Of Ukraine',
             html: 'University Of Ukraine, Kutaisi, Georgia',
             zoom: 16,
-            icon: 'https://maps.google.com/mapfiles/markerD.png',
+            icon: 'https://maps.google.com/mapfiles/markerH.png',
           animation:google.maps.Animation.DROP
         },
         {
@@ -91,47 +91,42 @@
             title: 'Norwegian University',
             html: 'Norwegian University of Science and Technology, Høgskoleringen, Trondheim, Norway',
             zoom: 16,
-            icon: 'https://maps.google.com/mapfiles/markerD.png',
+            icon: 'https://maps.google.com/mapfiles/markerI.png',
           animation:google.maps.Animation.DROP
-        } 
+        }
         ];
-  
+//DROPDOWN MENU
             new Maplace({
-                locations: LocsA,
+                locations: LocsA,//START WITH LOCATION A
                 map_div: '#gmap',
-                controls_type: 'list',
-                controls_title: 'Choose a place',
-                
-               
-                circleRadiusChanged: function(index, point, marker) {
-                    $('#radiusInfo').text(
-                        ' - point #' + (index+1) + ' size: ' + parseInt(marker.getRadius()) + 'mt.'
-                    );
-                }
-    }).Load();
+                controls_type: 'list',//BEING A LIST
+                controls_title: 'Choose your University'//TITLE: input of a title on the drop down list.
+
+
+    }).Load();//
 });
-    </script>    
-    
+    </script>
+
 </head>
-    
+
 <body>
 
     <section>
-        
+
         <div class="navbar">
             <a class="logo"></a>
             <a href="#" class="active">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">Programmes 
+                <button class="dropbtn">Programmes
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
                     <a href="#">Doctorate</a>
                     <a href="#">Master's</a>
                     <a href="#">Bachelor's</a>
-                    <a href="#">Online courses</a>    
-                </div> 
-            </div> 
+                    <a href="#">Online courses</a>
+                </div>
+            </div>
             <a href="#">Discover</a>
             <a href="#">Ask</a>
         </div>
@@ -146,28 +141,28 @@
                     <option>Doctorate</option>
                     <option>Master's</option>
                     <option>Bachelor's</option>
-                    <option>Online Courses</option>    
+                    <option>Online Courses</option>
                 </select>
                 <select>
                     <option>Field</option>
                     <option>Arts</option>
                     <option>Business</option>
                     <option>Education</option>
-                    <option>Humanities</option>                   
-                    <option>Natural Sciences</option>  
-                    <option>Social Sciences</option> 
+                    <option>Humanities</option>
+                    <option>Natural Sciences</option>
+                    <option>Social Sciences</option>
                 </select>
                 <select>
                     <option>University</option>
                     <option>University of Oxford</option>
                     <option>University of Cambridge</option>
                     <option>University College London</option>
-                    <option>University of Ediburgh</option> 
-                    <option>Imperial College of London</option>            
+                    <option>University of Ediburgh</option>
+                    <option>Imperial College of London</option>
                 </select>
                 <select>
                     <option>Scholarship</option>
-                    <option>No Scholarship</option>  
+                    <option>No Scholarship</option>
                 </select>
                 <select>
                     <option>Country</option>
@@ -442,30 +437,30 @@
                         <option>Doctorate</option>
                         <option>Master's</option>
                         <option>Bachelor's</option>
-                        <option>Online Courses</option>    
+                        <option>Online Courses</option>
                     </select>
                     <select>
                         <option>Field</option>
                         <option>Arts</option>
                         <option>Business</option>
                         <option>Education</option>
-                        <option>Humanities</option>                   
-                        <option>Natural Sciences</option>  
-                        <option>Social Sciences</option> 
+                        <option>Humanities</option>
+                        <option>Natural Sciences</option>
+                        <option>Social Sciences</option>
                     </select>
                     <select>
                         <option>University</option>
                         <option>Doctorate</option>
                         <option>Master's</option>
                         <option>Bachelor's</option>
-                        <option>Online Courses</option>    
+                        <option>Online Courses</option>
                     </select>
                     <select>
                         <option>Scholarship</option>
                         <option>Doctorate</option>
                         <option>Master's</option>
                         <option>Bachelor's</option>
-                        <option>Online Courses</option>    
+                        <option>Online Courses</option>
                     </select>
                 <a href="">Discover</a>
             </div>
@@ -473,7 +468,7 @@
                 <!-- https://maplacejs.com tutorial used-->
                 <div id="controls"></div>
                 <div id="gmap"></div>
-                
+
             </div>
         </div>
     </section>
@@ -484,7 +479,7 @@
         <div class="link">
             <a href="#"><img src="Images/icons-07.png"></a>
             <a href="#"><img src="Images/icons-13.png"></a>
-            <a href="#"><img src="Images/icons-09.png"></a>            
+            <a href="#"><img src="Images/icons-09.png"></a>
             <a href="#"><img src="Images/icons-05.png"></a>
             <a href="#"><img src="Images/icons-08.png"></a>
             <a href="#"><img src="Images/icons-12.png"></a>
@@ -504,7 +499,7 @@
                 <h2>Programmes</h2>
                 <p>Doctorates</p>
                 <p>Master's</p>
-                <p>Bachelor's</p>               
+                <p>Bachelor's</p>
                 <p>Online Courses</p>
             </div>
             <div>
@@ -514,15 +509,15 @@
             <div>
                 <h2>Ask</h2>
                 <p>All Questions</p>
-                <p>FAQ</p>            
+                <p>FAQ</p>
             </div>
             <div>
                 <h2>My Profile</h2>
                 <p>Search Forum</p>
-                <p>Notifications</p>            
-            </div> 
+                <p>Notifications</p>
+            </div>
         </div>
     </section>
-    
+
 </body>
 </html>
